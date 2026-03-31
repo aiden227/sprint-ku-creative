@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ku Creatives - Your Call with Calvin Is Confirmed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#151C51',
+              blue: '#245EFF',
+              'blue-hover': '#084DC5',
+              pink: '#F7768A',
+              crimson: '#E8173A',
+              gray: '#444444',
+              muted: '#787878',
+              tint: '#F5F5F5',
+              'blue-tint': '#D2DDFC',
+              'off-white': '#EDEDED',
+            },
+          },
+          fontFamily: {
+            heading: ['"Black Han Sans"', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    :root {
+      --color-navy: #151C51;
+      --color-blue: #245EFF;
+      --color-pink: #F7768A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: #444444; overflow-x: hidden; }
+
+    /* Checkmark animation */
+    @keyframes checkmarkScale {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .checkmark-icon {
+      animation: checkmarkScale 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+    }
+    .pulse-ring {
+      animation: pulseRing 1.5s ease-out 0.5s both;
+    }
+    .fade-slide-in {
+      animation: fadeSlideIn 0.6s ease-out both;
+    }
+    .delay-1 { animation-delay: 0.4s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.8s; }
+    .delay-4 { animation-delay: 1.0s; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.85);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    /* FAQ accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.3s ease; }
+  </style>
+</head>
+<body class="bg-white antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6 flex items-center justify-between h-16 sm:h-[72px]">
+      <a href="/" class="flex items-center gap-2.5 shrink-0">
+        <img src="images/logo-nav.png" alt="Ku Creatives" class="h-8 sm:h-10 w-auto">
+      </a>
+      <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 font-body text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-green-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        Application Received
+      </span>
+    </div>
+  </nav>
+
+  <!-- Confirmation Hero -->
+  <section class="bg-brand-navy relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('images/founder-headshot.png'); background-size: 300px; background-repeat: repeat;"></div>
+    <div class="relative max-w-[1170px] mx-auto px-5 sm:px-6 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24">
+
+      <!-- Success icon -->
+      <div class="flex justify-center mb-6">
+        <div class="relative">
+          <div class="pulse-ring absolute inset-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-brand-blue"></div>
+          <div class="checkmark-icon w-16 h-16 sm:w-20 sm:h-20 bg-brand-blue rounded-full flex items-center justify-center relative z-10">
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-heading text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.15] text-white text-center max-w-[700px] mx-auto mb-4 fade-slide-in delay-1">
+        Your Call with Calvin Is <span class="text-brand-pink">Confirmed.</span>
+      </h1>
+
+      <!-- One-liner -->
+      <p class="font-body text-brand-off-white/80 text-base sm:text-lg text-center max-w-[600px] mx-auto mb-8 sm:mb-10 fade-slide-in delay-2">
+        Here's what happens next and the one thing you need to do before we talk.
+      </p>
+
+      <!-- Hero Video -->
+      <div class="max-w-[780px] mx-auto mb-8 sm:mb-10 fade-slide-in delay-3">
+        <div class="relative w-full rounded-xl overflow-hidden shadow-2xl shadow-black/30" style="aspect-ratio: 16/9;">
+          <div class="w-full h-full bg-brand-navy/50 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 cursor-pointer hover:scale-110 transition-transform">
+                <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="font-body text-white/60 text-xs">Watch: What to Expect on Your Call</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary CTA -->
+      <div class="text-center mb-8 fade-slide-in delay-4">
+        <a href="#" class="inline-block bg-brand-blue hover:bg-brand-blue-hover text-white font-body font-semibold text-sm sm:text-base px-8 sm:px-10 py-3.5 sm:py-4 rounded-full transition-colors shadow-lg shadow-brand-blue/30">
+          Complete Your Prep (5 Minutes)
+        </a>
+        <p class="font-body text-brand-off-white/50 text-xs mt-3">Not the right time? <a href="#" class="underline hover:text-brand-pink transition-colors">Reschedule here.</a></p>
+      </div>
+
+      <!-- What Happens Next -->
+      <div class="max-w-[680px] mx-auto fade-slide-in delay-4">
+        <h3 class="font-heading text-white text-lg sm:text-xl text-center mb-6">What Happens Next</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center">
+              <span class="font-body text-white text-xs font-bold">1</span>
+            </div>
+            <div>
+              <p class="font-body text-white font-semibold text-sm">Right now</p>
+              <p class="font-body text-brand-off-white/70 text-sm">Complete your prep form (click the button above)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-8 h-8 bg-brand-blue/60 rounded-full flex items-center justify-center">
+              <span class="font-body text-white text-xs font-bold">2</span>
+            </div>
+            <div>
+              <p class="font-body text-white font-semibold text-sm">In 5 minutes</p>
+              <p class="font-body text-brand-off-white/70 text-sm">Confirmation email with your Zoom link</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-8 h-8 bg-brand-blue/60 rounded-full flex items-center justify-center">
+              <span class="font-body text-white text-xs font-bold">3</span>
+            </div>
+            <div>
+              <p class="font-body text-white font-semibold text-sm">48 hours before</p>
+              <p class="font-body text-brand-off-white/70 text-sm">Reminder email with prep checklist</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-8 h-8 bg-brand-blue/60 rounded-full flex items-center justify-center">
+              <span class="font-body text-white text-xs font-bold">4</span>
+            </div>
+            <div>
+              <p class="font-body text-white font-semibold text-sm">24 hours before</p>
+              <p class="font-body text-brand-off-white/70 text-sm">Text reminder with call details</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-8 h-8 bg-brand-blue/60 rounded-full flex items-center justify-center">
+              <span class="font-body text-white text-xs font-bold">5</span>
+            </div>
+            <div>
+              <p class="font-body text-white font-semibold text-sm">1 hour before</p>
+              <p class="font-body text-brand-off-white/70 text-sm">Final reminder with your Zoom link</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-8 h-8 bg-brand-pink rounded-full flex items-center justify-center">
+              <span class="font-body text-white text-xs font-bold">6</span>
+            </div>
+            <div>
+              <p class="font-body text-white font-semibold text-sm">Call time</p>
+              <p class="font-body text-brand-off-white/70 text-sm">45-minute Thought Leader Machine assessment with Calvin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Micro Proof Bar -->
+  <section class="bg-brand-tint py-6 border-b border-gray-100">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 font-body text-brand-navy text-xs sm:text-sm font-semibold">
+        <span>300M+ views</span>
+        <span class="text-brand-muted">|</span>
+        <span>$10M+ revenue</span>
+        <span class="text-brand-muted">|</span>
+        <span>200+ brands</span>
+        <span class="text-brand-muted">|</span>
+        <span>1,323 videos/month</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breakout Videos Section -->
+  <section class="bg-white py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <div class="text-center mb-10 sm:mb-12 reveal">
+        <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl md:text-[36px] leading-tight mb-3">
+          Got Questions Before the Call? Start Here.
+        </h2>
+        <p class="font-body text-brand-muted text-sm sm:text-base max-w-[600px] mx-auto">
+          Watch any of these before we talk. Each one covers a question we hear every week from coaches and consultants. Skip to the ones that matter to you.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+
+        <!-- Video 1 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-blue text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Before the Call</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">Watch This Before Our Call</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">What happens on the call. How it's structured. What to expect.</p>
+            <div class="flex items-center gap-3">
+              <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors">Complete Your Prep</a>
+              <a href="#" class="font-body text-brand-muted text-xs hover:text-brand-pink transition-colors">Reschedule</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-pink text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Qualification</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">This Might Not Be for You</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">Who this is for and who it's not for. Hard qualification criteria.</p>
+            <div class="flex items-center gap-3">
+              <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors">Complete Your Prep</a>
+              <a href="#" class="font-body text-brand-muted text-xs hover:text-brand-pink transition-colors">Reschedule</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-blue text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">The System</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">10 Clients in 90 Days in 3 Phases</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">How the Thought Leader Machine works. The full mechanism with proof.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-pink text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Objection</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">Burned by an Agency Before?</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">Why agencies failed you before and what's structurally different here.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-blue text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Investment</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">The Real Cost of NOT Having a System</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">The math on total investment vs. what you're already spending.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-pink text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Niche</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">"My Niche Is Too Small"</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">Does this work beyond celebrity names? 200+ brands. LEAAD Farms. Your niche.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+        <!-- Video 7 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-blue text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Camera Fear</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">A Few Hours a Month from You</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">What recording actually looks like. Camera fear. Time commitment.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+        <!-- Video 8 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-pink text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Pricing</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">Why We Don't Do Monthly Retainers</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">Why one commitment beats monthly retainers. No rev share.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+        <!-- Video 9 -->
+        <div class="bg-brand-tint rounded-2xl overflow-hidden reveal">
+          <div class="relative w-full bg-brand-navy/90 flex items-center justify-center" style="aspect-ratio: 16/9;">
+            <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-brand-blue text-white text-[10px] font-body font-semibold px-2.5 py-1 rounded-full">Prep</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <p class="font-body text-brand-navy font-semibold text-sm mb-1">Do This Before We Meet</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed mb-3">The prep checklist. What to bring. Who should be on the call.</p>
+            <a href="#" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">Complete Your Prep</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How the Thought Leader Machine Works -->
+  <section class="bg-brand-tint py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[780px] mx-auto px-5 sm:px-6">
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 sm:mb-12 reveal">
+        How We Get You 10 High-Ticket Clients Per Month
+      </h2>
+
+      <div class="space-y-8 reveal">
+        <!-- Step 1 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center">
+              <span class="font-heading text-white text-sm">1</span>
+            </div>
+            <div>
+              <p class="font-heading text-brand-navy text-base sm:text-lg mb-2">Position You As The Authority (Week 1-2)</p>
+              <p class="font-body text-brand-gray text-sm leading-relaxed mb-2">Before a single piece of content goes live, we define your core message, your unique perspective, your signature frameworks, and your origin story. This becomes the DNA of everything we create.</p>
+              <p class="font-body text-brand-muted text-xs"><span class="font-semibold">KPI:</span> Messaging framework that differentiates you from every other coach or consultant in your niche.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center">
+              <span class="font-heading text-white text-sm">2</span>
+            </div>
+            <div>
+              <p class="font-heading text-brand-navy text-base sm:text-lg mb-2">Flood The Market With Content (Week 2+)</p>
+              <p class="font-body text-brand-gray text-sm leading-relaxed mb-2">30+ short-form videos per month. 4 long-form YouTube videos. 270+ repurposed posts across 3 subaccounts. 25 fresh ad creatives per month. All produced by a 24/7 editing team that never stops.</p>
+              <p class="font-body text-brand-muted text-xs"><span class="font-semibold">KPI:</span> 1,323 videos delivered monthly. Campaigns that never die from ad fatigue.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 bg-brand-pink rounded-xl flex items-center justify-center">
+              <span class="font-heading text-white text-sm">3</span>
+            </div>
+            <div>
+              <p class="font-heading text-brand-navy text-base sm:text-lg mb-2">Convert Attention Into Clients (Week 2+)</p>
+              <p class="font-body text-brand-gray text-sm leading-relaxed mb-2">High-converting landing page or VSL. Automated email and SMS nurture sequences. Meta ad campaigns with retargeting and lookalike audiences. CRM setup. Appointment booking system.</p>
+              <p class="font-body text-brand-muted text-xs"><span class="font-semibold">KPI:</span> 80+ qualified calls per month at full operation. 10+ high-ticket clients per month guaranteed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Proof -->
+      <div class="mt-8 bg-brand-navy rounded-2xl p-6 sm:p-8 reveal">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <img src="images/testimonial-result-2.png" alt="Tai Lopez" class="w-20 h-20 object-contain rounded-lg mb-3">
+            <p class="font-body text-white text-sm leading-relaxed">Tai Lopez was already well-known. We built the ad creatives and the VSL. Result: <span class="text-brand-pink font-semibold">$77,000 in revenue in a single week.</span> 2.6% average CTR.</p>
+          </div>
+          <div>
+            <p class="font-body text-white text-sm leading-relaxed">LEAAD Farms was a farming education brand with 1,000 YouTube subscribers and no paid acquisition. Same system. Different niche. Grew to <span class="text-brand-pink font-semibold">78,800 subscribers.</span></p>
+            <p class="font-body text-brand-off-white/50 text-xs mt-3 italic">Results vary based on individual effort, experience, and market conditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Is and Is Not For -->
+  <section class="bg-white py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[780px] mx-auto px-5 sm:px-6">
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-3 reveal">
+        Who This Call Is and Isn't For
+      </h2>
+      <p class="font-body text-brand-muted text-sm text-center mb-10 reveal">
+        Before the call, read this. If the "not for you" list describes your situation right now, save us both the time and reschedule. No hard feelings.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6 reveal">
+        <!-- For you -->
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
+          <p class="font-heading text-brand-navy text-base mb-4">This call is for you if:</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-green-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-body text-brand-gray text-sm">Coach, consultant, or course creator with a proven high-ticket offer ($10K+ LTV)</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-green-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-body text-brand-gray text-sm">Doing $250,000 or more per year in revenue</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-green-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-body text-brand-gray text-sm">Willing to show up on camera and record a few hours per week</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-green-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-body text-brand-gray text-sm">Ready to invest $15K upfront plus $5K-$10K/month in ad spend</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-green-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-body text-brand-gray text-sm">Can commit to a full 90-day sprint</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Not for you -->
+        <div class="bg-red-50 rounded-2xl p-6 border border-red-100">
+          <p class="font-heading text-brand-navy text-base mb-4">This call is NOT for you if:</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="font-body text-brand-gray text-sm">You don't have a proven offer yet</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="font-body text-brand-gray text-sm">You're doing under $250K/year in revenue</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="font-body text-brand-gray text-sm">You want overnight results</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="font-body text-brand-gray text-sm">You're not willing to be on camera</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="font-body text-brand-gray text-sm">$15K isn't in the budget right now</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="font-body text-brand-muted text-xs text-center mt-6 reveal">
+        If any of the "not for you" items apply, please reschedule. We'd rather save both of our time. <a href="#" class="text-brand-blue hover:underline">Reschedule here.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Questions (Confirmation) -->
+  <section class="bg-brand-tint py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[780px] mx-auto px-5 sm:px-6">
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 sm:mb-12 reveal">Questions Before the Call</h2>
+
+      <div class="space-y-3" id="conf-faq-list">
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">"I've hired agencies before and they burned me. Why should I trust this?"</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">You're not alone. Most of our clients were spending $10K-$15K/month before they found us. They got recycled ad creatives, generic content, and a PDF full of impressions. Nobody owned the full pipeline, so leads fell through the cracks. We own every piece. Content, ads, funnel, nurture, CRM, booking. One team. And the guarantee exists specifically for people like you. 10 high-ticket clients per month within 90 days or we work for free. That's in the agreement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">"How do I know the $15K investment is worth it?"</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">If your average high-ticket client is worth $10K... and we deliver 10 new clients per month at the guarantee minimum... close just two and the system pays for itself. Everything after that is profit. Compare that to the $30K-$45K most coaches spend over 90 days with agencies that guarantee nothing. And compare it to building an in-house team: content editor, social media manager, media buyer, funnel builder, CRM admin. That's $25K-$40K a month in payroll.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">"My niche feels too small or too saturated for this to work."</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">We've worked with 200+ brands across dozens of industries. The smaller and more specific your niche, the easier it is to dominate. A business coach competing with every business coach online has a harder time. But a business coach who specializes in home service companies doing $1M-$5M... that person can own their space in 90 days. We'll walk through your specific niche on the call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Prepare -->
+  <section class="bg-white py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[780px] mx-auto px-5 sm:px-6">
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 reveal">How to Prepare</h2>
+
+      <div class="grid sm:grid-cols-2 gap-6 reveal">
+        <!-- What to bring -->
+        <div class="bg-brand-tint rounded-2xl p-6">
+          <p class="font-heading text-brand-navy text-base mb-4">What to bring:</p>
+          <ul class="space-y-2.5 font-body text-brand-gray text-sm">
+            <li class="flex items-start gap-2"><span class="text-brand-blue font-bold mt-0.5">-</span> Your revenue numbers for the last 12 months</li>
+            <li class="flex items-start gap-2"><span class="text-brand-blue font-bold mt-0.5">-</span> How many leads or calls you're getting per month</li>
+            <li class="flex items-start gap-2"><span class="text-brand-blue font-bold mt-0.5">-</span> What you're currently spending on marketing</li>
+            <li class="flex items-start gap-2"><span class="text-brand-blue font-bold mt-0.5">-</span> Your one core high-ticket offer</li>
+            <li class="flex items-start gap-2"><span class="text-brand-blue font-bold mt-0.5">-</span> What you've tried before that didn't work</li>
+            <li class="flex items-start gap-2"><span class="text-brand-blue font-bold mt-0.5">-</span> Complete the prep form before the call</li>
+          </ul>
+        </div>
+
+        <!-- Who must attend -->
+        <div class="bg-brand-tint rounded-2xl p-6">
+          <p class="font-heading text-brand-navy text-base mb-4">Who must attend:</p>
+          <p class="font-body text-brand-gray text-sm leading-relaxed mb-4">If someone else needs to sign off on a marketing investment, get them on the call. Business partner, spouse, whoever. Add them to the invite now.</p>
+          <p class="font-body text-brand-gray text-sm leading-relaxed mb-4">Going through the whole assessment and then re-explaining it secondhand never works.</p>
+          <p class="font-heading text-brand-navy text-base mb-2 mt-6">Technical requirements:</p>
+          <p class="font-body text-brand-gray text-sm leading-relaxed">Zoom link (sent via email and text). Screen-share capability. A quiet spot where you can focus for 45 minutes.</p>
+        </div>
+      </div>
+
+      <p class="font-body text-brand-muted text-xs text-center mt-6 reveal">
+        Calls that start more than 10 minutes late will be rescheduled. <a href="#" class="text-brand-blue hover:underline">Reschedule here.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonial Gallery -->
+  <section class="bg-brand-tint py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 sm:mb-12 reveal">
+        What Clients Say About Working with Ku Creatives
+      </h2>
+
+      <!-- Proof cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 reveal">
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 cursor-pointer hover:shadow-md transition-shadow lightbox-trigger">
+          <img src="images/social-proof-phone-1.png" alt="Bear Grylls content - 3.8M views" class="w-full h-48 sm:h-56 object-cover">
+          <div class="p-3">
+            <p class="font-body text-brand-navy text-xs font-semibold">Bear Grylls</p>
+            <p class="font-body text-brand-muted text-[10px]">3.8M views</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 cursor-pointer hover:shadow-md transition-shadow lightbox-trigger">
+          <img src="images/case-study-result-1.png" alt="Tai Lopez Meta Ads results" class="w-full h-48 sm:h-56 object-cover object-top">
+          <div class="p-3">
+            <p class="font-body text-brand-navy text-xs font-semibold">Tai Lopez</p>
+            <p class="font-body text-brand-muted text-[10px]">$77K in one week</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 cursor-pointer hover:shadow-md transition-shadow lightbox-trigger">
+          <img src="images/social-proof-phone-2.png" alt="Content results - 1.4M views" class="w-full h-48 sm:h-56 object-cover">
+          <div class="p-3">
+            <p class="font-body text-brand-navy text-xs font-semibold">Content Results</p>
+            <p class="font-body text-brand-muted text-[10px]">1.4M views</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 cursor-pointer hover:shadow-md transition-shadow lightbox-trigger">
+          <img src="images/social-proof-phone-3.png" alt="Content results - 3.1M views" class="w-full h-48 sm:h-56 object-cover">
+          <div class="p-3">
+            <p class="font-body text-brand-navy text-xs font-semibold">Viral Content</p>
+            <p class="font-body text-brand-muted text-[10px]">3.1M views</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial quotes grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="font-body text-brand-navy text-sm italic leading-relaxed">"I don't have to constantly tell them what to do, they just know. Quality is probably the highest you're gonna find anywhere. All in all, I'd give them a 10/10."</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="font-body text-brand-navy text-sm italic leading-relaxed">"I just sit, record and send it to them and they get it ready. It makes life so much easier as a business owner."</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="font-body text-brand-navy text-sm italic leading-relaxed">"Don't know how I'd run my agency without them."</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="font-body text-brand-navy text-sm italic leading-relaxed">"It was probably one of the most seamless experiences that I've had in a long time."</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="font-body text-brand-navy text-sm italic leading-relaxed">"Before working with Ku Creatives, we left about 4 different partners, we tried about 3 different editors before we settled on Ku Creatives."</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100">
+          <p class="font-body text-brand-navy text-sm italic leading-relaxed">"Calvin and the Ku Creatives team are the best partner we have found in business in a long time."</p>
+        </div>
+      </div>
+
+      <!-- Logo strips -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-8 sm:gap-12 reveal">
+        <img src="images/client-logo-strip-1.png" alt="MrBeast Producer" class="h-10 sm:h-12 w-auto object-contain opacity-70">
+        <img src="images/client-logo-strip-2.png" alt="Water2" class="h-8 sm:h-10 w-auto object-contain opacity-70">
+      </div>
+
+      <!-- Aggregate stats -->
+      <div class="mt-8 bg-brand-navy rounded-2xl py-5 px-6 sm:px-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 reveal">
+        <span class="font-body text-white text-xs sm:text-sm font-semibold">300M+ views</span>
+        <span class="font-body text-brand-off-white/40">|</span>
+        <span class="font-body text-white text-xs sm:text-sm font-semibold">$10M+ revenue</span>
+        <span class="font-body text-brand-off-white/40">|</span>
+        <span class="font-body text-white text-xs sm:text-sm font-semibold">200+ brands</span>
+        <span class="font-body text-brand-off-white/40">|</span>
+        <span class="font-body text-white text-xs sm:text-sm font-semibold">1,323 videos/month</span>
+        <span class="font-body text-brand-off-white/40">|</span>
+        <span class="font-body text-white text-xs sm:text-sm font-semibold">24/7 editing team</span>
+      </div>
+
+      <p class="font-body text-brand-muted text-xs text-center mt-4 italic">Results vary based on individual effort, experience, and market conditions.</p>
+    </div>
+  </section>
+
+  <!-- Phone Number Display -->
+  <section class="bg-white py-10 sm:py-12 border-y border-gray-100">
+    <div class="max-w-[680px] mx-auto px-5 sm:px-6 text-center">
+      <p class="font-body text-brand-navy text-base sm:text-lg font-semibold mb-2">You'll get a text from Calvin's team.</p>
+      <p class="font-body text-brand-muted text-sm">Save the number so you know it's us when we reach out.</p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-brand-navy py-16 sm:py-20">
+    <div class="max-w-[680px] mx-auto px-5 sm:px-6 text-center">
+      <h2 class="font-heading text-white text-2xl sm:text-3xl mb-4">One Thing Left to Do.</h2>
+      <p class="font-body text-brand-off-white/80 text-sm sm:text-base leading-relaxed mb-3">
+        Complete your prep form. Takes 5 minutes. Calvin reads every single one before the call so you can skip all the background and get straight to what matters.
+      </p>
+      <p class="font-body text-brand-off-white/60 text-sm leading-relaxed mb-8">
+        The coaches and consultants who show up prepared get 10x more out of the assessment. Real numbers. Real plan. Real conversation about whether the Thought Leader Machine is a fit.
+      </p>
+      <a href="#" class="inline-block bg-brand-blue hover:bg-brand-blue-hover text-white font-body font-semibold text-sm sm:text-base px-8 sm:px-10 py-3.5 sm:py-4 rounded-full transition-colors shadow-lg shadow-brand-blue/30 mb-4">
+        Complete Your Prep
+      </a>
+      <br>
+      <a href="#" class="font-body text-brand-off-white/50 text-xs hover:text-brand-pink transition-colors">Add This Call to Your Calendar</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-navy py-12 sm:py-16 border-t border-white/5">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <img src="images/Logo Ku Creatives 500 px copy.png" alt="Ku Creatives" class="h-12 w-12 mb-4">
+          <p class="font-body text-brand-off-white/60 text-sm leading-relaxed">
+            Done-for-you authority building and client acquisition for coaches, consultants, and course creators. One team. One system. Results guaranteed.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-heading text-white text-base mb-3">Contact</h4>
+          <ul class="space-y-2 font-body text-brand-off-white/60 text-sm">
+            <li>Calvin Manik</li>
+            <li><a href="mailto:calvin@kucreatives.com" class="hover:text-brand-pink transition-colors">calvin@kucreatives.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading text-white text-base mb-3">Quick Links</h4>
+          <ul class="space-y-2 font-body text-brand-off-white/60 text-sm">
+            <li><a href="https://kucreatives.com/thought-leader" target="_blank" rel="noopener" class="hover:text-brand-pink transition-colors">Main Website</a></li>
+            <li><a href="/" class="hover:text-brand-pink transition-colors">Landing Page</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading text-white text-base mb-3">Follow Us</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-white/10">
+        <p class="font-body text-brand-off-white/40 text-xs leading-relaxed text-center">
+          This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. Results mentioned are not typical. Your results may vary based on your effort, experience, and market conditions.
+        </p>
+        <p class="font-body text-brand-off-white/30 text-xs text-center mt-4">
+          &copy; 2026 Ku Creatives. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img src="" alt="Full size" id="lightbox-img">
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var wasOpen = item.classList.contains('open');
+        // Close all in same parent
+        item.parentElement.querySelectorAll('.faq-item').forEach(function(faq) {
+          faq.classList.remove('open');
+        });
+        if (!wasOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    // Lightbox
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var img = el.querySelector('img');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('active');
+        }
+      });
+    });
+
+    lightbox.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    // Scroll reveal
+    function revealOnScroll() {
+      var reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(function(el) {
+        var top = el.getBoundingClientRect().top;
+        var windowHeight = window.innerHeight;
+        if (top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+</body>
+</html>

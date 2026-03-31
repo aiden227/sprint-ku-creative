@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ku Creatives - Stop Being the Best-Kept Secret in Your Niche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#151C51',
+              blue: '#245EFF',
+              'blue-hover': '#084DC5',
+              pink: '#F7768A',
+              crimson: '#E8173A',
+              gray: '#444444',
+              muted: '#787878',
+              tint: '#F5F5F5',
+              'blue-tint': '#D2DDFC',
+              'off-white': '#EDEDED',
+            },
+          },
+          fontFamily: {
+            heading: ['"Black Han Sans"', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    :root {
+      --color-navy: #151C51;
+      --color-navy-rgb: 21, 28, 81;
+      --color-blue: #245EFF;
+      --color-blue-rgb: 36, 94, 255;
+      --color-pink: #F7768A;
+      --color-pink-rgb: 247, 118, 138;
+      --color-crimson: #E8173A;
+      --color-tint: #F5F5F5;
+      --color-off-white: #EDEDED;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: #444444; overflow-x: hidden; }
+
+    /* Multi-step form transitions */
+    .form-step { display: none; opacity: 0; transition: opacity 0.25s ease; }
+    .form-step.active { display: block; opacity: 1; }
+
+    /* Option button hover/active */
+    .option-btn {
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .option-btn:hover {
+      border-color: #245EFF;
+      background: rgba(36, 94, 255, 0.04);
+    }
+    .option-btn.selected {
+      border-color: #245EFF;
+      box-shadow: 0 0 0 2px #245EFF;
+      background: rgba(36, 94, 255, 0.06);
+    }
+
+    /* FAQ accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.3s ease; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Progress bar */
+    .progress-fill { transition: width 0.3s ease; }
+
+    /* Disqualification message */
+    .disqualify-msg { display: none; }
+    .disqualify-msg.show { display: block; }
+  </style>
+</head>
+<body class="bg-white antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6 flex items-center justify-between h-16 sm:h-[72px]">
+      <a href="/" class="flex items-center gap-2.5 shrink-0">
+        <img src="images/logo-nav.png" alt="Ku Creatives" class="h-8 sm:h-10 w-auto">
+      </a>
+      <a href="#qualify" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs sm:text-sm font-medium px-5 sm:px-7 py-2.5 sm:py-3 rounded-full transition-colors">
+        Book My Strategy Call
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-brand-navy overflow-hidden">
+    <!-- Geometric pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('images/founder-headshot.png'); background-size: 300px; background-repeat: repeat;"></div>
+    <div class="relative max-w-[1170px] mx-auto px-5 sm:px-6 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24">
+
+      <!-- Call out -->
+      <div class="text-center mb-5 sm:mb-6 reveal">
+        <span class="inline-block bg-brand-pink/15 text-brand-pink font-body text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border border-brand-pink/25">
+          Attention Coaches, Consultants, and Course Creators
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-heading text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.15] text-white text-center max-w-[820px] mx-auto mb-5 sm:mb-6 reveal">
+        Stop Being the <span class="text-brand-pink">Best-Kept Secret</span> in Your Niche.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="font-body text-brand-off-white/85 text-base sm:text-lg leading-relaxed text-center max-w-[680px] mx-auto mb-8 sm:mb-10 reveal">
+        The Thought Leader Machine guarantees you 10 high-ticket clients per month within 90 days. One team. One payment. Everything handled. Or we keep working for free until we deliver.
+      </p>
+
+      <!-- VSL Video Placeholder -->
+      <div class="max-w-[780px] mx-auto mb-8 sm:mb-10 reveal">
+        <div class="relative w-full rounded-xl overflow-hidden shadow-2xl shadow-black/30" style="aspect-ratio: 16/9;">
+          <img src="images/vsl-thumbnail.webp" alt="How Coaches Get 10+ High-Ticket Clients Per Month" class="w-full h-full object-cover">
+          <!-- Play button overlay -->
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition-colors cursor-pointer group">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-blue rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi-Step Qualification Form (Hero) -->
+      <div id="qualify" class="max-w-[560px] mx-auto reveal">
+        <div class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-6 sm:p-8">
+          <!-- Form header -->
+          <h3 class="font-heading text-brand-navy text-xl sm:text-2xl text-center mb-1">See If You Qualify</h3>
+          <p class="font-body text-brand-muted text-sm text-center mb-5">Answer 4 quick questions. Takes 60 seconds.</p>
+
+          <!-- Progress -->
+          <div class="mb-5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-body text-xs text-brand-muted font-medium" data-step-text="hero">Step 1 of 5</span>
+            </div>
+            <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-brand-blue rounded-full progress-fill" data-progress="hero" style="width: 20%"></div>
+            </div>
+          </div>
+
+          <div id="hero-form">
+            <!-- Step 1 -->
+            <div class="form-step active" data-step="0">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What best describes your current revenue?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Under $250K/year" data-disqualify="true">Under $250K/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$250K - $500K/year">$250K - $500K/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$500K - $1M/year">$500K - $1M/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$1M - $5M/year">$1M - $5M/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$5M+/year">$5M+/year</button>
+              </div>
+              <!-- Disqualification message -->
+              <div class="disqualify-msg mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800 font-body leading-relaxed">
+                The Thought Leader Machine is built for coaches and consultants doing $250K+ per year. If you're close and growing fast, go ahead and continue. Otherwise, we'd love to work with you when you're ready.
+                <button type="button" class="mt-3 text-brand-blue font-semibold text-sm hover:underline continue-anyway-btn">Continue Anyway</button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" data-step="1">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What is your biggest bottleneck right now?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Not enough visibility">Not enough visibility or authority in my space</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Inconsistent leads">Inconsistent lead flow and pipeline</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="No conversion system">No system to convert content into clients</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Doing everything myself">Doing everything myself and burning out</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step" data-step="2">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">How many qualified sales calls are you booking per month?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Fewer than 10">Fewer than 10</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="10-30">10 - 30</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="30-50">30 - 50</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="50+">50+</button>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="form-step" data-step="3">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">When are you looking to solve this?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Immediately">Immediately</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 30 days">Within 30 days</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 90 days">Within 90 days</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Just exploring">Just exploring</button>
+              </div>
+            </div>
+
+            <!-- Step 5 - Contact info -->
+            <div class="form-step" data-step="4">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">Last step. Where should we send the details?</p>
+              <form id="hero-contact-form" class="space-y-3">
+                <div class="grid grid-cols-2 gap-3">
+                  <input type="text" name="firstName" placeholder="First Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                  <input type="text" name="lastName" placeholder="Last Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                </div>
+                <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blue-hover text-white font-body font-semibold text-sm sm:text-base py-3.5 rounded-full transition-colors mt-1">
+                  Book My Strategy Call
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Logo Proof Bar -->
+  <section class="bg-white py-8 sm:py-10 border-b border-gray-100">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <p class="font-body text-xs text-brand-muted text-center tracking-widest uppercase mb-5">Trusted by industry leaders</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
+        <img src="images/client-logo-strip-1.png" alt="MrBeast Producer - Frank Ponce" class="h-10 sm:h-12 lg:h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+        <img src="images/client-logo-strip-2.png" alt="Water2" class="h-8 sm:h-10 lg:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+        <img src="images/testimonial-result-1.png" alt="Bear Grylls" class="h-10 sm:h-12 lg:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity rounded">
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof Section -->
+  <section class="bg-brand-tint py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <!-- Section headline -->
+      <div class="text-center mb-10 sm:mb-14 reveal">
+        <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl md:text-[36px] leading-tight">
+          300M+ Views. $10M+ Revenue Generated. 200+ Brands.
+        </h2>
+      </div>
+
+      <!-- Proof cards grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+
+        <!-- Card 1: Bear Grylls -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
+          <div class="relative">
+            <img src="images/social-proof-phone-1.png" alt="Bear Grylls content - 3.8M views" class="w-full h-52 object-cover">
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Bear Grylls</span>
+            <p class="font-heading text-brand-navy text-lg mb-1">Millions of Views in Month One</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">Full social media management. Individual pieces hitting 2M+ views. Managed their entire content pipeline.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Tai Lopez -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
+          <div class="relative">
+            <img src="images/case-study-result-1.png" alt="Meta Ads dashboard - Tai Lopez results" class="w-full h-52 object-cover object-top">
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-brand-pink/10 text-brand-pink text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Tai Lopez</span>
+            <p class="font-heading text-brand-navy text-lg mb-1">$77,000 in One Week</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">Ad creatives + VSL. 2.6% average CTR. $0.33 CPC. Results from a single campaign push.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: LEAAD Farms -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
+          <div class="relative">
+            <img src="images/social-proof-phone-3.png" alt="Content results - 3.1M views" class="w-full h-52 object-cover">
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">LEAAD Farms</span>
+            <p class="font-heading text-brand-navy text-lg mb-1">1K to 78,800 YouTube Subscribers</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">A farming education brand. Same system, different niche. Full content production and growth.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Cale Carlson -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
+          <div class="relative">
+            <img src="images/social-proof-phone-2.png" alt="Bear Grylls content - 1.4M views" class="w-full h-52 object-cover">
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Cale Carlson</span>
+            <p class="font-heading text-brand-navy text-lg mb-1">0 to 70,000 YouTube Subscribers</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">Content production and strategy. Built from zero with no existing audience.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Testimonial - 10/10 -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex gap-1 mb-3">
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="font-body text-brand-navy text-sm leading-relaxed italic mb-4">"I don't have to constantly tell them what to do, they just know. Quality is probably the highest you're gonna find anywhere. All in all, I'd give them a 10/10."</p>
+          </div>
+        </div>
+
+        <!-- Card 6: Testimonial - Left 4 Partners -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex gap-1 mb-3">
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="font-body text-brand-navy text-sm leading-relaxed italic mb-4">"Before working with Ku Creatives, we left about 4 different partners, we tried about 3 different editors before we settled on Ku Creatives."</p>
+          </div>
+        </div>
+
+        <!-- Card 7: Testimonial - Seamless -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"It was probably one of the most seamless experiences that I've had in a long time."</p>
+        </div>
+
+        <!-- Card 8: Testimonial - Life Easier -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"I just sit, record and send it to them and they get it ready. It makes life so much easier as a business owner."</p>
+        </div>
+
+        <!-- Card 9: Testimonial - Best Partner -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"Calvin and the Ku Creatives team are the best partner we have found in business in a long time."</p>
+        </div>
+
+        <!-- Card 10: Testimonial - Can't Run Agency -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"Don't know how I'd run my agency without them."</p>
+        </div>
+
+        <!-- Card 11: Aggregate Stats -->
+        <div class="bg-brand-navy rounded-2xl p-6 text-white reveal">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl text-brand-pink">300M+</p>
+              <p class="font-body text-brand-off-white/70 text-xs mt-1">Total Views</p>
+            </div>
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl text-brand-pink">$10M+</p>
+              <p class="font-body text-brand-off-white/70 text-xs mt-1">Revenue Tracked</p>
+            </div>
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl text-white">200+</p>
+              <p class="font-body text-brand-off-white/70 text-xs mt-1">Brands Served</p>
+            </div>
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl text-white">1,323</p>
+              <p class="font-body text-brand-off-white/70 text-xs mt-1">Videos/Month</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10">
+            <p class="font-body text-brand-off-white/60 text-xs">24/7 editing operation. Never stops.</p>
+          </div>
+        </div>
+
+        <!-- Card 12: Meta Ads Dashboard -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
+          <img src="images/case-study-result-2.png" alt="Meta Ads Manager dashboard - live campaign data" class="w-full h-52 object-cover object-top">
+          <div class="p-5">
+            <p class="font-body text-brand-muted text-xs leading-relaxed">Live campaign data from client ad account. Results vary based on offer and market.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Proof images row -->
+      <div class="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 reveal">
+        <img src="images/testimonial-result-2.png" alt="Tai Lopez" class="w-full h-40 sm:h-48 object-contain bg-white rounded-2xl border border-gray-100 p-4">
+        <img src="images/testimonial-result-3.png" alt="Ku Creatives team" class="w-full h-40 sm:h-48 object-contain bg-white rounded-2xl border border-gray-100 p-4">
+        <img src="images/vsl-thumbnail.webp" alt="Ku Creatives case study" class="w-full h-40 sm:h-48 object-cover bg-white rounded-2xl border border-gray-100 hidden sm:block">
+      </div>
+
+      <p class="font-body text-brand-muted text-xs text-center mt-6 italic">Results vary based on individual effort, experience, and market conditions.</p>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="bg-brand-navy py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <div class="max-w-[680px] mx-auto text-center mb-10 reveal">
+        <h2 class="font-heading text-white text-2xl sm:text-3xl md:text-[36px] leading-tight mb-5">
+          Ready to Stop Being <span class="text-brand-pink">Invisible?</span>
+        </h2>
+        <p class="font-body text-brand-off-white/80 text-base leading-relaxed mb-3">
+          So if you're a coach, consultant, or course creator... you're tired of watching less qualified people with louder brands eat your lunch... and you want one team that handles everything from content to clients...
+        </p>
+        <p class="font-body text-brand-off-white/80 text-base leading-relaxed mb-3">
+          Click below. Answer 4 quick questions. Book a time on Calvin's calendar.
+        </p>
+        <p class="font-body text-brand-off-white/60 text-sm leading-relaxed">
+          Worst case? A free strategy conversation with the team that manages Bear Grylls' social media. Best case? You finally get the system that turns your expertise into 10+ high-ticket clients per month.
+        </p>
+      </div>
+
+      <!-- Second Form Instance -->
+      <div class="max-w-[560px] mx-auto reveal">
+        <div class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-6 sm:p-8">
+          <h3 class="font-heading text-brand-navy text-xl sm:text-2xl text-center mb-1">See If You Qualify</h3>
+          <p class="font-body text-brand-muted text-sm text-center mb-5">Answer 4 quick questions. Takes 60 seconds.</p>
+
+          <div class="mb-5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-body text-xs text-brand-muted font-medium" data-step-text="cta">Step 1 of 5</span>
+            </div>
+            <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-brand-blue rounded-full progress-fill" data-progress="cta" style="width: 20%"></div>
+            </div>
+          </div>
+
+          <div id="cta-form">
+            <!-- Step 1 -->
+            <div class="form-step active" data-step="0">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What best describes your current revenue?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Under $250K/year" data-disqualify="true">Under $250K/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$250K - $500K/year">$250K - $500K/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$500K - $1M/year">$500K - $1M/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$1M - $5M/year">$1M - $5M/year</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$5M+/year">$5M+/year</button>
+              </div>
+              <div class="disqualify-msg mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800 font-body leading-relaxed">
+                The Thought Leader Machine is built for coaches and consultants doing $250K+ per year. If you're close and growing fast, go ahead and continue. Otherwise, we'd love to work with you when you're ready.
+                <button type="button" class="mt-3 text-brand-blue font-semibold text-sm hover:underline continue-anyway-btn">Continue Anyway</button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" data-step="1">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What is your biggest bottleneck right now?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Not enough visibility">Not enough visibility or authority in my space</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Inconsistent leads">Inconsistent lead flow and pipeline</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="No conversion system">No system to convert content into clients</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Doing everything myself">Doing everything myself and burning out</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step" data-step="2">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">How many qualified sales calls are you booking per month?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Fewer than 10">Fewer than 10</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="10-30">10 - 30</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="30-50">30 - 50</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="50+">50+</button>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="form-step" data-step="3">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">When are you looking to solve this?</p>
+              <div class="space-y-2.5">
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Immediately">Immediately</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 30 days">Within 30 days</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 90 days">Within 90 days</button>
+                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Just exploring">Just exploring</button>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="form-step" data-step="4">
+              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">Last step. Where should we send the details?</p>
+              <form id="cta-contact-form" class="space-y-3">
+                <div class="grid grid-cols-2 gap-3">
+                  <input type="text" name="firstName" placeholder="First Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                  <input type="text" name="lastName" placeholder="Last Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                </div>
+                <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blue-hover text-white font-body font-semibold text-sm sm:text-base py-3.5 rounded-full transition-colors mt-1">
+                  Book My Strategy Call
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-white py-16 sm:py-20 lg:py-24">
+    <div class="max-w-[780px] mx-auto px-5 sm:px-6">
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 sm:mb-12 reveal">Common Questions</h2>
+
+      <div class="space-y-3" id="faq-list">
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">How is this different from every other marketing agency?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Most agencies handle one piece. Content OR ads OR funnels. Nobody owns the full pipeline. So leads come in and fall through the cracks. Or the creative goes stale and your cost per lead goes through the roof. We own every piece. Brand positioning, content production, ad creation and management, funnel, nurture sequences, CRM, and booking system. One team. One pipeline. One guarantee: 10 high-ticket clients per month or we work for free.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">I've spent $10K-$15K/month on agencies before and got nothing. Why would this be different?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Those agencies delivered mediocre content, recycled the same 3 ad creatives until your campaigns died, and sent you a PDF with follower counts. The structural problem was that nobody owned the full pipeline. We produce 25 fresh ad creatives per month so campaigns never go stale. Our 24/7 editing team delivers 1,323 videos every month. And we guarantee 10 clients per month within 90 days or we keep working at zero cost until we hit it. That's in the agreement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">$15K upfront is a lot. What if it doesn't work?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Compare it to what you've probably already spent. Most coaches drop $30K-$45K over 90 days with agencies that guarantee nothing. $10K-$15K/month in retainers, plus ad spend, plus revenue share on top. We charge $15K. One payment. No retainer. No rev share. And if we don't deliver 10 high-ticket clients per month within 90 days, we work for free until we do. Close two high-ticket clients from the system and the investment pays for itself.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">I'm not great on camera. Is that a problem?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">You don't need to be great on camera. You need to be real. We script everything and guide you through the recording. Your total time commitment is a few hours per week of raw footage. Our team handles scripting, editing, captions, posting, ad creation, and everything else. One of our clients said it best: "I just sit, record and send it to them and they get it ready."</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">Does this work in my specific niche?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">We've served 200+ brands across coaching, consulting, fitness, real estate, e-commerce, SaaS, wellness, finance, and more. We grew LEAAD Farms - a farming education brand - from 1,000 to 78,800 YouTube subscribers. The system is built to work in any niche where the founder is the face of the brand. On the call, we'll map the Thought Leader Machine to your specific market. Results vary based on niche and market.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">Why isn't this a monthly retainer like every other agency?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Monthly retainers create a bad incentive. The agency gets paid whether the system works or not. Month one. Month two. Month three. Our model means we have to deliver in 90 days. Both sides are fully committed from day one. No dragging it out. No slow-rolling results. And no revenue share, so every client you close is 100% yours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
+          <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">How long until I see results?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5 sm:px-6">
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Content goes live within 14 days. Qualified leads start within 30 days. The full system hits stride at 90 days. That's the timeline. Any agency promising results in week one is lying to you.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-navy py-12 sm:py-16">
+    <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+
+        <!-- Col 1: Logo + description -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <img src="images/Logo Ku Creatives 500 px copy.png" alt="Ku Creatives" class="h-12 w-12 mb-4">
+          <p class="font-body text-brand-off-white/60 text-sm leading-relaxed">
+            Done-for-you authority building and client acquisition for coaches, consultants, and course creators. One team. One system. Results guaranteed.
+          </p>
+        </div>
+
+        <!-- Col 2: Contact -->
+        <div>
+          <h4 class="font-heading text-white text-base mb-3">Contact</h4>
+          <ul class="space-y-2 font-body text-brand-off-white/60 text-sm">
+            <li>Calvin Manik</li>
+            <li><a href="mailto:calvin@kucreatives.com" class="hover:text-brand-pink transition-colors">calvin@kucreatives.com</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div>
+          <h4 class="font-heading text-white text-base mb-3">Quick Links</h4>
+          <ul class="space-y-2 font-body text-brand-off-white/60 text-sm">
+            <li><a href="https://kucreatives.com/thought-leader" target="_blank" rel="noopener" class="hover:text-brand-pink transition-colors">Main Website</a></li>
+            <li><a href="#qualify" class="hover:text-brand-pink transition-colors">Book a Strategy Call</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Social -->
+        <div>
+          <h4 class="font-heading text-white text-base mb-3">Follow Us</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-10 pt-8 border-t border-white/10">
+        <p class="font-body text-brand-off-white/40 text-xs leading-relaxed text-center">
+          This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. Results mentioned are not typical. Your results may vary based on your effort, experience, and market conditions. The Thought Leader Machine is a service provided by Ku Creatives. All guarantees are subject to the terms outlined in the service agreement.
+        </p>
+        <p class="font-body text-brand-off-white/30 text-xs text-center mt-4">
+          &copy; 2026 Ku Creatives. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Multi-step form logic
+    function initForm(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const steps = container.querySelectorAll('.form-step');
+      const totalSteps = steps.length;
+      let currentStep = 0;
+
+      // Determine which progress elements to use
+      const formKey = containerId === 'hero-form' ? 'hero' : 'cta';
+      const progressBar = document.querySelector('[data-progress="' + formKey + '"]');
+      const stepText = document.querySelector('[data-step-text="' + formKey + '"]');
+
+      function showStep(index) {
+        steps.forEach(function(step, i) {
+          if (i === index) {
+            step.classList.add('active');
+          } else {
+            step.classList.remove('active');
+          }
+        });
+        if (progressBar) {
+          progressBar.style.width = ((index + 1) / totalSteps * 100) + '%';
+        }
+        if (stepText) {
+          stepText.textContent = 'Step ' + (index + 1) + ' of ' + totalSteps;
+        }
+      }
+
+      // Option buttons
+      container.querySelectorAll('[data-option]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var step = btn.closest('.form-step');
+
+          // Check for disqualify
+          if (btn.dataset.disqualify === 'true') {
+            var msg = step.querySelector('.disqualify-msg');
+            if (msg) {
+              msg.classList.add('show');
+              // Select the button visually
+              step.querySelectorAll('[data-option]').forEach(function(b) { b.classList.remove('selected'); });
+              btn.classList.add('selected');
+              return; // Don't auto-advance
+            }
+          }
+
+          // Select visually
+          step.querySelectorAll('[data-option]').forEach(function(b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+
+          // Auto-advance after short delay
+          setTimeout(function() {
+            if (currentStep < totalSteps - 1) {
+              currentStep++;
+              showStep(currentStep);
+            }
+          }, 200);
+        });
+      });
+
+      // Continue anyway buttons (disqualification)
+      container.querySelectorAll('.continue-anyway-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          if (currentStep < totalSteps - 1) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        });
+      });
+
+      // Submit handler
+      var form = container.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          window.location.href = '/confirmation';
+        });
+      }
+
+      showStep(0);
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var wasOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function(faq) {
+          faq.classList.remove('open');
+        });
+
+        // Toggle clicked
+        if (!wasOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    // Scroll reveal
+    function revealOnScroll() {
+      var reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(function(el) {
+        var top = el.getBoundingClientRect().top;
+        var windowHeight = window.innerHeight;
+        if (top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', function() {
+      revealOnScroll();
+      initForm('hero-form');
+      initForm('cta-form');
+    });
+  </script>
+
+</body>
+</html>
