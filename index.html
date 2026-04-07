@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ku Creatives - Stop Being the Best-Kept Secret in Your Niche</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -47,28 +50,62 @@
       --color-off-white: #EDEDED;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; color: #444444; overflow-x: hidden; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #444444;
+      overflow-x: hidden;
+    }
 
     /* FAQ accordion */
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
-    .faq-item.open .faq-answer { max-height: 400px; }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); }
-    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-chevron {
+      transition: transform 0.3s ease;
+    }
 
     /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body class="bg-white antialiased">
 
   <!-- Hero Section -->
   <section class="relative bg-brand-navy overflow-hidden">
     <!-- Subtle Background Grid -->
-    <div class="absolute inset-0 pointer-events-none z-0 flex justify-center w-full h-full max-w-[1920px] mx-auto opacity-[0.06]">
+    <div
+      class="absolute inset-0 pointer-events-none z-0 flex justify-center w-full h-full max-w-[1920px] mx-auto opacity-[0.06]">
       <div class="w-full h-full grid grid-cols-6 md:grid-cols-12 border-l border-brand-blue">
         <div class="h-full border-r border-brand-blue"></div>
         <div class="h-full border-r border-brand-blue"></div>
@@ -88,36 +125,45 @@
 
       <!-- Call out -->
       <div class="text-center mb-5 sm:mb-6 reveal">
-        <span class="inline-block bg-brand-pink/15 text-brand-pink font-body text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border border-brand-pink/25">
+        <span
+          class="inline-block bg-brand-pink/15 text-brand-pink font-body text-xs sm:text-sm font-semibold tracking-wide px-4 py-1.5 rounded-full border border-brand-pink/25">
           Attention Coaches, Consultants, and Course Creators
         </span>
       </div>
 
       <!-- Headline -->
-      <h1 class="font-heading text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.15] text-white text-center max-w-[820px] mx-auto mb-5 sm:mb-6 reveal">
+      <h1
+        class="font-heading text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.15] text-white text-center max-w-[820px] mx-auto mb-5 sm:mb-6 reveal">
         10 High-Ticket Clients Per Month in <span class="text-brand-pink">90 Days.</span> Guaranteed.
       </h1>
 
       <!-- Subheadline -->
-      <p class="font-body text-brand-off-white/85 text-base sm:text-lg leading-relaxed text-center max-w-[680px] mx-auto mb-8 sm:mb-10 reveal">
-        The Thought Leader Machine guarantees you 10 high-ticket clients per month within 90 days. One team. One payment. Everything handled. Or we keep working for free until we deliver.
+      <p
+        class="font-body text-brand-off-white/85 text-base sm:text-lg leading-relaxed text-center max-w-[680px] mx-auto mb-8 sm:mb-10 reveal">
+        The Thought Leader Machine guarantees you 10 high-ticket clients per month within 90 days. One team. One
+        payment. Everything handled. Or we keep working for free until we deliver.
       </p>
 
       <!-- VSL Video Placeholder -->
       <div class="max-w-[780px] mx-auto mb-8 sm:mb-10 reveal">
         <div class="relative w-full rounded-xl overflow-hidden shadow-2xl shadow-black/30" style="aspect-ratio: 16/9;">
-          <img src="images/vsl-thumbnail.webp" alt="How Coaches Get 10+ High-Ticket Clients Per Month" class="w-full h-full object-cover">
+          <img src="images/vsl-thumbnail.webp" alt="How Coaches Get 10+ High-Ticket Clients Per Month"
+            class="w-full h-full object-cover">
           <!-- Play button overlay -->
-          <div class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition-colors cursor-pointer group">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-blue rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <div
+            class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition-colors cursor-pointer group">
+            <div
+              class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-blue rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Typeform Application -->
-      <div id="qualify" class="max-w-[560px] mx-auto reveal" style="min-height:500px">
+      <div id="qualify" class="max-w-[560px] mx-auto reveal flex justify-center">
         <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG"></div>
         <script src="//embed.typeform.com/next/embed.js"></script>
       </div>
@@ -128,11 +174,15 @@
   <!-- Logo Proof Bar -->
   <section class="bg-white py-8 sm:py-10 border-b border-gray-100">
     <div class="max-w-[1170px] mx-auto px-5 sm:px-6">
-      <p class="font-body text-xs text-brand-muted text-center tracking-widest uppercase mb-5">Trusted by industry leaders</p>
+      <p class="font-body text-xs text-brand-muted text-center tracking-widest uppercase mb-5">Trusted by industry
+        leaders</p>
       <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
-        <img src="images/client-logo-strip-1.png" alt="MrBeast Producer - Frank Ponce" class="h-10 sm:h-12 lg:h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
-        <img src="images/client-logo-strip-2.png" alt="Water2" class="h-8 sm:h-10 lg:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
-        <img src="images/testimonial-result-1.png" alt="Bear Grylls" class="h-10 sm:h-12 lg:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity rounded">
+        <img src="images/client-logo-strip-1.png" alt="MrBeast Producer - Frank Ponce"
+          class="h-10 sm:h-12 lg:h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+        <img src="images/client-logo-strip-2.png" alt="Water2"
+          class="h-8 sm:h-10 lg:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+        <img src="images/testimonial-result-1.png" alt="Bear Grylls"
+          class="h-10 sm:h-12 lg:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity rounded">
       </div>
     </div>
   </section>
@@ -153,48 +203,64 @@
         <!-- Card 1: Bear Grylls -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
           <div class="relative">
-            <img src="images/social-proof-phone-1.png" alt="Bear Grylls content - 3.8M views" class="w-full h-52 object-cover">
+            <img src="images/social-proof-phone-1.png" alt="Bear Grylls content - 3.8M views"
+              class="w-full h-52 object-cover">
           </div>
           <div class="p-5">
-            <span class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Bear Grylls</span>
+            <span
+              class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Bear
+              Grylls</span>
             <p class="font-heading text-brand-navy text-lg mb-1">Millions of Views in Month One</p>
-            <p class="font-body text-brand-muted text-sm leading-relaxed">Full social media management. Individual pieces hitting 2M+ views. Managed their entire content pipeline.</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">Full social media management. Individual
+              pieces hitting 2M+ views. Managed their entire content pipeline.</p>
           </div>
         </div>
 
         <!-- Card 2: Tai Lopez -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
           <div class="relative">
-            <img src="images/case-study-result-1.png" alt="Meta Ads dashboard - Tai Lopez results" class="w-full h-52 object-cover object-top">
+            <img src="images/case-study-result-1.png" alt="Meta Ads dashboard - Tai Lopez results"
+              class="w-full h-52 object-cover object-top">
           </div>
           <div class="p-5">
-            <span class="inline-block bg-brand-pink/10 text-brand-pink text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Tai Lopez</span>
+            <span
+              class="inline-block bg-brand-pink/10 text-brand-pink text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Tai
+              Lopez</span>
             <p class="font-heading text-brand-navy text-lg mb-1">$77,000 in One Week</p>
-            <p class="font-body text-brand-muted text-sm leading-relaxed">Ad creatives + VSL. 2.6% average CTR. $0.33 CPC. Results from a single campaign push.</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">Ad creatives + VSL. 2.6% average CTR. $0.33
+              CPC. Results from a single campaign push.</p>
           </div>
         </div>
 
         <!-- Card 3: LEAAD Farms -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
           <div class="relative">
-            <img src="images/social-proof-phone-3.png" alt="Content results - 3.1M views" class="w-full h-52 object-cover">
+            <img src="images/social-proof-phone-3.png" alt="Content results - 3.1M views"
+              class="w-full h-52 object-cover">
           </div>
           <div class="p-5">
-            <span class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">LEAAD Farms</span>
+            <span
+              class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">LEAAD
+              Farms</span>
             <p class="font-heading text-brand-navy text-lg mb-1">1K to 78,800 YouTube Subscribers</p>
-            <p class="font-body text-brand-muted text-sm leading-relaxed">A farming education brand. Same system, different niche. Full content production and growth.</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">A farming education brand. Same system,
+              different niche. Full content production and growth.</p>
           </div>
         </div>
 
         <!-- Card 4: Cale Carlson -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
           <div class="relative">
-            <img src="images/social-proof-phone-2.png" alt="Bear Grylls content - 1.4M views" class="w-full h-52 object-cover">
+            <img src="images/social-proof-phone-2.png" alt="Bear Grylls content - 1.4M views"
+              class="w-full h-52 object-cover">
           </div>
           <div class="p-5">
-            <span class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Cale Carlson</span>
+            <span
+              class="inline-block bg-brand-blue-tint text-brand-navy text-xs font-semibold px-2.5 py-1 rounded-full mb-2.5">Cale
+              Carlson</span>
             <p class="font-heading text-brand-navy text-lg mb-1">0 to 70,000 YouTube Subscribers</p>
-            <p class="font-body text-brand-muted text-sm leading-relaxed">Content production and strategy. Built from zero with no existing audience.</p>
+            <p class="font-body text-brand-muted text-sm leading-relaxed">Content production and strategy. Built from
+              zero with no existing audience.</p>
           </div>
         </div>
 
@@ -202,13 +268,30 @@
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
           <div>
             <div class="flex gap-1 mb-3">
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
             </div>
-            <p class="font-body text-brand-navy text-sm leading-relaxed italic mb-4">"I don't have to constantly tell them what to do, they just know. Quality is probably the highest you're gonna find anywhere. All in all, I'd give them a 10/10."</p>
+            <p class="font-body text-brand-navy text-sm leading-relaxed italic mb-4">"I don't have to constantly tell
+              them what to do, they just know. Quality is probably the highest you're gonna find anywhere. All in all,
+              I'd give them a 10/10."</p>
           </div>
         </div>
 
@@ -216,34 +299,55 @@
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
           <div>
             <div class="flex gap-1 mb-3">
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
             </div>
-            <p class="font-body text-brand-navy text-sm leading-relaxed italic mb-4">"Before working with Ku Creatives, we left about 4 different partners, we tried about 3 different editors before we settled on Ku Creatives."</p>
+            <p class="font-body text-brand-navy text-sm leading-relaxed italic mb-4">"Before working with Ku Creatives,
+              we left about 4 different partners, we tried about 3 different editors before we settled on Ku Creatives."
+            </p>
           </div>
         </div>
 
         <!-- Card 7: Testimonial - Seamless -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
-          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"It was probably one of the most seamless experiences that I've had in a long time."</p>
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"It was probably one of the most seamless
+            experiences that I've had in a long time."</p>
         </div>
 
         <!-- Card 8: Testimonial - Life Easier -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
-          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"I just sit, record and send it to them and they get it ready. It makes life so much easier as a business owner."</p>
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"I just sit, record and send it to them
+            and they get it ready. It makes life so much easier as a business owner."</p>
         </div>
 
         <!-- Card 9: Testimonial - Best Partner -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
-          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"Calvin and the Ku Creatives team are the best partner we have found in business in a long time."</p>
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"Calvin and the Ku Creatives team are the
+            best partner we have found in business in a long time."</p>
         </div>
 
         <!-- Card 10: Testimonial - Can't Run Agency -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between reveal">
-          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"Don't know how I'd run my agency without them."</p>
+          <p class="font-body text-brand-navy text-sm leading-relaxed italic">"Don't know how I'd run my agency without
+            them."</p>
         </div>
 
         <!-- Card 11: Aggregate Stats -->
@@ -273,9 +377,11 @@
 
         <!-- Card 12: Meta Ads Dashboard -->
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
-          <img src="images/case-study-result-2.png" alt="Meta Ads Manager dashboard - live campaign data" class="w-full h-52 object-cover object-top">
+          <img src="images/case-study-result-2.png" alt="Meta Ads Manager dashboard - live campaign data"
+            class="w-full h-52 object-cover object-top">
           <div class="p-5">
-            <p class="font-body text-brand-muted text-xs leading-relaxed">Live campaign data from client ad account. Results vary based on offer and market.</p>
+            <p class="font-body text-brand-muted text-xs leading-relaxed">Live campaign data from client ad account.
+              Results vary based on offer and market.</p>
           </div>
         </div>
 
@@ -283,12 +389,16 @@
 
       <!-- Proof images row -->
       <div class="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 reveal">
-        <img src="images/testimonial-result-2.png" alt="Tai Lopez" class="w-full h-40 sm:h-48 object-contain bg-white rounded-2xl border border-gray-100 p-4">
-        <img src="images/testimonial-result-3.png" alt="Ku Creatives team" class="w-full h-40 sm:h-48 object-contain bg-white rounded-2xl border border-gray-100 p-4">
-        <img src="images/vsl-thumbnail.webp" alt="Ku Creatives case study" class="w-full h-40 sm:h-48 object-cover bg-white rounded-2xl border border-gray-100 hidden sm:block">
+        <img src="images/testimonial-result-2.png" alt="Tai Lopez"
+          class="w-full h-40 sm:h-48 object-contain bg-white rounded-2xl border border-gray-100 p-4">
+        <img src="images/testimonial-result-3.png" alt="Ku Creatives team"
+          class="w-full h-40 sm:h-48 object-contain bg-white rounded-2xl border border-gray-100 p-4">
+        <img src="images/vsl-thumbnail.webp" alt="Ku Creatives case study"
+          class="w-full h-40 sm:h-48 object-cover bg-white rounded-2xl border border-gray-100 hidden sm:block">
       </div>
 
-      <p class="font-body text-brand-muted text-xs text-center mt-6 italic">Results vary based on individual effort, experience, and market conditions.</p>
+      <p class="font-body text-brand-muted text-xs text-center mt-6 italic">Results vary based on individual effort,
+        experience, and market conditions.</p>
     </div>
   </section>
 
@@ -300,18 +410,20 @@
           Ready to Stop Being <span class="text-brand-pink">Invisible?</span>
         </h2>
         <p class="font-body text-brand-off-white/80 text-base leading-relaxed mb-3">
-          So if you're a coach, consultant, or course creator... you're tired of watching less qualified people with louder brands eat your lunch... and you want one team that handles everything from content to clients...
+          So if you're a coach, consultant, or course creator... you're tired of watching less qualified people with
+          louder brands eat your lunch... and you want one team that handles everything from content to clients...
         </p>
         <p class="font-body text-brand-off-white/80 text-base leading-relaxed mb-3">
           Click below. Answer 4 quick questions. Book a time on Calvin's calendar.
         </p>
         <p class="font-body text-brand-off-white/60 text-sm leading-relaxed">
-          Worst case? A free strategy conversation with the team that manages Bear Grylls' social media. Best case? You finally get the system that turns your expertise into 10+ high-ticket clients per month.
+          Worst case? A free strategy conversation with the team that manages Bear Grylls' social media. Best case? You
+          finally get the system that turns your expertise into 10+ high-ticket clients per month.
         </p>
       </div>
 
       <!-- Typeform Application -->
-      <div class="max-w-[560px] mx-auto reveal" style="min-height:500px">
+      <div class="max-w-[560px] mx-auto reveal flex justify-center">
         <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG"></div>
         <script src="//embed.typeform.com/next/embed.js"></script>
       </div>
@@ -321,77 +433,132 @@
   <!-- FAQ Section -->
   <section class="bg-white py-16 sm:py-20 lg:py-24">
     <div class="max-w-[780px] mx-auto px-5 sm:px-6">
-      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 sm:mb-12 reveal">Common Questions</h2>
+      <h2 class="font-heading text-brand-navy text-2xl sm:text-3xl text-center mb-10 sm:mb-12 reveal">Common Questions
+      </h2>
 
       <div class="space-y-3" id="faq-list">
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">How is this different from every other marketing agency?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">How is this different from
+              every other marketing agency?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Most agencies handle one piece. Content OR ads OR funnels. Nobody owns the full pipeline. So leads come in and fall through the cracks. Or the creative goes stale and your cost per lead goes through the roof. We own every piece. Brand positioning, content production, ad creation and management, funnel, nurture sequences, CRM, and booking system. One team. One pipeline. One guarantee: 10 high-ticket clients per month or we work for free.</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Most agencies handle one piece. Content OR
+              ads OR funnels. Nobody owns the full pipeline. So leads come in and fall through the cracks. Or the
+              creative goes stale and your cost per lead goes through the roof. We own every piece. Brand positioning,
+              content production, ad creation and management, funnel, nurture sequences, CRM, and booking system. One
+              team. One pipeline. One guarantee: 10 high-ticket clients per month or we work for free.</p>
           </div>
         </div>
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">I've spent $10K-$15K/month on agencies before and got nothing. Why would this be different?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">I've spent $10K-$15K/month
+              on agencies before and got nothing. Why would this be different?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Those agencies delivered mediocre content, recycled the same 3 ad creatives until your campaigns died, and sent you a PDF with follower counts. The structural problem was that nobody owned the full pipeline. We produce 25 fresh ad creatives per month so campaigns never go stale. Our 24/7 editing team delivers 1,323 videos every month. And we guarantee 10 clients per month within 90 days or we keep working at zero cost until we hit it. That's in the agreement.</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Those agencies delivered mediocre content,
+              recycled the same 3 ad creatives until your campaigns died, and sent you a PDF with follower counts. The
+              structural problem was that nobody owned the full pipeline. We produce 25 fresh ad creatives per month so
+              campaigns never go stale. Our 24/7 editing team delivers 1,323 videos every month. And we guarantee 10
+              clients per month within 90 days or we keep working at zero cost until we hit it. That's in the agreement.
+            </p>
           </div>
         </div>
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">$15K upfront is a lot. What if it doesn't work?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">$15K upfront is a lot. What
+              if it doesn't work?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Compare it to what you've probably already spent. Most coaches drop $30K-$45K over 90 days with agencies that guarantee nothing. $10K-$15K/month in retainers, plus ad spend, plus revenue share on top. We charge $15K. One payment. No retainer. No rev share. And if we don't deliver 10 high-ticket clients per month within 90 days, we work for free until we do. Close two high-ticket clients from the system and the investment pays for itself.</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Compare it to what you've probably already
+              spent. Most coaches drop $30K-$45K over 90 days with agencies that guarantee nothing. $10K-$15K/month in
+              retainers, plus ad spend, plus revenue share on top. We charge $15K. One payment. No retainer. No rev
+              share. And if we don't deliver 10 high-ticket clients per month within 90 days, we work for free until we
+              do. Close two high-ticket clients from the system and the investment pays for itself.</p>
           </div>
         </div>
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">I'm not great on camera. Is that a problem?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">I'm not great on camera. Is
+              that a problem?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">You don't need to be great on camera. You need to be real. We script everything and guide you through the recording. Your total time commitment is a few hours per week of raw footage. Our team handles scripting, editing, captions, posting, ad creation, and everything else. One of our clients said it best: "I just sit, record and send it to them and they get it ready."</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">You don't need to be great on camera. You
+              need to be real. We script everything and guide you through the recording. Your total time commitment is a
+              few hours per week of raw footage. Our team handles scripting, editing, captions, posting, ad creation,
+              and everything else. One of our clients said it best: "I just sit, record and send it to them and they get
+              it ready."</p>
           </div>
         </div>
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">Does this work in my specific niche?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">Does this work in my
+              specific niche?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">We've served 200+ brands across coaching, consulting, fitness, real estate, e-commerce, SaaS, wellness, finance, and more. We grew LEAAD Farms - a farming education brand - from 1,000 to 78,800 YouTube subscribers. The system is built to work in any niche where the founder is the face of the brand. On the call, we'll map the Thought Leader Machine to your specific market. Results vary based on niche and market.</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">We've served 200+ brands across coaching,
+              consulting, fitness, real estate, e-commerce, SaaS, wellness, finance, and more. We grew LEAAD Farms - a
+              farming education brand - from 1,000 to 78,800 YouTube subscribers. The system is built to work in any
+              niche where the founder is the face of the brand. On the call, we'll map the Thought Leader Machine to
+              your specific market. Results vary based on niche and market.</p>
           </div>
         </div>
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">Why isn't this a monthly retainer like every other agency?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">Why isn't this a monthly
+              retainer like every other agency?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Monthly retainers create a bad incentive. The agency gets paid whether the system works or not. Month one. Month two. Month three. Our model means we have to deliver in 90 days. Both sides are fully committed from day one. No dragging it out. No slow-rolling results. And no revenue share, so every client you close is 100% yours.</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Monthly retainers create a bad incentive.
+              The agency gets paid whether the system works or not. Month one. Month two. Month three. Our model means
+              we have to deliver in 90 days. Both sides are fully committed from day one. No dragging it out. No
+              slow-rolling results. And no revenue share, so every client you close is 100% yours.</p>
           </div>
         </div>
 
         <div class="faq-item border border-gray-200 rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left">
-            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">How long until I see results?</span>
-            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="font-body text-brand-navy font-semibold text-sm sm:text-base pr-4">How long until I see
+              results?</span>
+            <svg class="faq-chevron w-5 h-5 text-brand-muted shrink-0" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="faq-answer px-5 sm:px-6">
-            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Content goes live within 14 days. Qualified leads start within 30 days. The full system hits stride at 90 days. That's the timeline. Any agency promising results in week one is lying to you.</p>
+            <p class="font-body text-brand-gray text-sm leading-relaxed pb-5">Content goes live within 14 days.
+              Qualified leads start within 30 days. The full system hits stride at 90 days. That's the timeline. Any
+              agency promising results in week one is lying to you.</p>
           </div>
         </div>
 
@@ -408,7 +575,8 @@
         <div class="sm:col-span-2 lg:col-span-1">
           <img src="images/Logo Ku Creatives 500 px copy.png" alt="Ku Creatives" class="h-12 w-12 mb-4">
           <p class="font-body text-brand-off-white/60 text-sm leading-relaxed">
-            Done-for-you authority building and client acquisition for coaches, consultants, and course creators. One team. One system. Results guaranteed.
+            Done-for-you authority building and client acquisition for coaches, consultants, and course creators. One
+            team. One system. Results guaranteed.
           </p>
         </div>
 
@@ -417,7 +585,8 @@
           <h4 class="font-heading text-white text-base mb-3">Contact</h4>
           <ul class="space-y-2 font-body text-brand-off-white/60 text-sm">
             <li>Calvin Manik</li>
-            <li><a href="mailto:calvin@kucreatives.com" class="hover:text-brand-pink transition-colors">calvin@kucreatives.com</a></li>
+            <li><a href="mailto:calvin@kucreatives.com"
+                class="hover:text-brand-pink transition-colors">calvin@kucreatives.com</a></li>
           </ul>
         </div>
 
@@ -425,7 +594,8 @@
         <div>
           <h4 class="font-heading text-white text-base mb-3">Quick Links</h4>
           <ul class="space-y-2 font-body text-brand-off-white/60 text-sm">
-            <li><a href="https://kucreatives.com/thought-leader" target="_blank" rel="noopener" class="hover:text-brand-pink transition-colors">Main Website</a></li>
+            <li><a href="https://kucreatives.com/thought-leader" target="_blank" rel="noopener"
+                class="hover:text-brand-pink transition-colors">Main Website</a></li>
             <li><a href="#qualify" class="hover:text-brand-pink transition-colors">Book a Strategy Call</a></li>
           </ul>
         </div>
@@ -434,14 +604,26 @@
         <div>
           <h4 class="font-heading text-white text-base mb-3">Follow Us</h4>
           <div class="flex gap-3">
-            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
             </a>
-            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
             </a>
-            <a href="#" class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 hover:bg-brand-blue rounded-lg flex items-center justify-center transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -451,7 +633,10 @@
       <!-- Disclaimer -->
       <div class="mt-10 pt-8 border-t border-white/10">
         <p class="font-body text-brand-off-white/40 text-xs leading-relaxed text-center">
-          This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. Results mentioned are not typical. Your results may vary based on your effort, experience, and market conditions. The Thought Leader Machine is a service provided by Ku Creatives. All guarantees are subject to the terms outlined in the service agreement.
+          This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by
+          Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. Results mentioned are not typical. Your results
+          may vary based on your effort, experience, and market conditions. The Thought Leader Machine is a service
+          provided by Ku Creatives. All guarantees are subject to the terms outlined in the service agreement.
         </p>
         <p class="font-body text-brand-off-white/30 text-xs text-center mt-4">
           &copy; 2026 Ku Creatives. All rights reserved.
@@ -463,13 +648,13 @@
   <!-- JavaScript -->
   <script>
     // FAQ accordion
-    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function() {
+    document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
         var item = btn.closest('.faq-item');
         var wasOpen = item.classList.contains('open');
 
         // Close all
-        document.querySelectorAll('.faq-item').forEach(function(faq) {
+        document.querySelectorAll('.faq-item').forEach(function (faq) {
           faq.classList.remove('open');
         });
 
@@ -483,7 +668,7 @@
     // Scroll reveal
     function revealOnScroll() {
       var reveals = document.querySelectorAll('.reveal');
-      reveals.forEach(function(el) {
+      reveals.forEach(function (el) {
         var top = el.getBoundingClientRect().top;
         var windowHeight = window.innerHeight;
         if (top < windowHeight - 60) {
@@ -493,10 +678,11 @@
     }
 
     window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       revealOnScroll();
     });
   </script>
 
 </body>
+
 </html>
