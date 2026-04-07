@@ -51,25 +51,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; color: #444444; overflow-x: hidden; }
 
-    /* Multi-step form transitions */
-    .form-step { display: none; opacity: 0; transition: opacity 0.25s ease; }
-    .form-step.active { display: block; opacity: 1; }
-
-    /* Option button hover/active */
-    .option-btn {
-      transition: all 0.15s ease;
-      cursor: pointer;
-    }
-    .option-btn:hover {
-      border-color: #245EFF;
-      background: rgba(36, 94, 255, 0.04);
-    }
-    .option-btn.selected {
-      border-color: #245EFF;
-      box-shadow: 0 0 0 2px #245EFF;
-      background: rgba(36, 94, 255, 0.06);
-    }
-
     /* FAQ accordion */
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
     .faq-item.open .faq-answer { max-height: 400px; }
@@ -80,33 +61,30 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Progress bar */
-    .progress-fill { transition: width 0.3s ease; }
-
-    /* Disqualification message */
-    .disqualify-msg { display: none; }
-    .disqualify-msg.show { display: block; }
   </style>
 </head>
 <body class="bg-white antialiased">
 
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-    <div class="max-w-[1170px] mx-auto px-5 sm:px-6 flex items-center justify-between h-16 sm:h-[72px]">
-      <a href="/" class="flex items-center gap-2.5 shrink-0">
-        <img src="images/logo-nav.png" alt="Ku Creatives" class="h-8 sm:h-10 w-auto">
-      </a>
-      <a href="#qualify" class="bg-brand-blue hover:bg-brand-blue-hover text-white font-body text-xs sm:text-sm font-medium px-5 sm:px-7 py-2.5 sm:py-3 rounded-full transition-colors">
-        Book My Strategy Call
-      </a>
-    </div>
-  </nav>
-
   <!-- Hero Section -->
   <section class="relative bg-brand-navy overflow-hidden">
-    <!-- Geometric pattern overlay -->
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('images/founder-headshot.png'); background-size: 300px; background-repeat: repeat;"></div>
-    <div class="relative max-w-[1170px] mx-auto px-5 sm:px-6 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24">
+    <!-- Subtle Background Grid -->
+    <div class="absolute inset-0 pointer-events-none z-0 flex justify-center w-full h-full max-w-[1920px] mx-auto opacity-[0.06]">
+      <div class="w-full h-full grid grid-cols-6 md:grid-cols-12 border-l border-brand-blue">
+        <div class="h-full border-r border-brand-blue"></div>
+        <div class="h-full border-r border-brand-blue"></div>
+        <div class="h-full border-r border-brand-blue"></div>
+        <div class="h-full border-r border-brand-blue"></div>
+        <div class="h-full border-r border-brand-blue"></div>
+        <div class="h-full border-r border-brand-blue"></div>
+        <div class="h-full border-r border-brand-blue hidden md:block"></div>
+        <div class="h-full border-r border-brand-blue hidden md:block"></div>
+        <div class="h-full border-r border-brand-blue hidden md:block"></div>
+        <div class="h-full border-r border-brand-blue hidden md:block"></div>
+        <div class="h-full border-r border-brand-blue hidden md:block"></div>
+        <div class="h-full border-r border-brand-blue hidden md:block"></div>
+      </div>
+    </div>
+    <div class="relative max-w-[1170px] mx-auto px-5 sm:px-6 pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
 
       <!-- Call out -->
       <div class="text-center mb-5 sm:mb-6 reveal">
@@ -117,7 +95,7 @@
 
       <!-- Headline -->
       <h1 class="font-heading text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] leading-[1.15] text-white text-center max-w-[820px] mx-auto mb-5 sm:mb-6 reveal">
-        Stop Being the <span class="text-brand-pink">Best-Kept Secret</span> in Your Niche.
+        10 High-Ticket Clients Per Month in <span class="text-brand-pink">90 Days.</span> Guaranteed.
       </h1>
 
       <!-- Subheadline -->
@@ -138,91 +116,10 @@
         </div>
       </div>
 
-      <!-- Multi-Step Qualification Form (Hero) -->
-      <div id="qualify" class="max-w-[560px] mx-auto reveal">
-        <div class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-6 sm:p-8">
-          <!-- Form header -->
-          <h3 class="font-heading text-brand-navy text-xl sm:text-2xl text-center mb-1">See If You Qualify</h3>
-          <p class="font-body text-brand-muted text-sm text-center mb-5">Answer 4 quick questions. Takes 60 seconds.</p>
-
-          <!-- Progress -->
-          <div class="mb-5">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-body text-xs text-brand-muted font-medium" data-step-text="hero">Step 1 of 5</span>
-            </div>
-            <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-              <div class="h-full bg-brand-blue rounded-full progress-fill" data-progress="hero" style="width: 20%"></div>
-            </div>
-          </div>
-
-          <div id="hero-form">
-            <!-- Step 1 -->
-            <div class="form-step active" data-step="0">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What best describes your current revenue?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Under $250K/year" data-disqualify="true">Under $250K/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$250K - $500K/year">$250K - $500K/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$500K - $1M/year">$500K - $1M/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$1M - $5M/year">$1M - $5M/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$5M+/year">$5M+/year</button>
-              </div>
-              <!-- Disqualification message -->
-              <div class="disqualify-msg mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800 font-body leading-relaxed">
-                The Thought Leader Machine is built for coaches and consultants doing $250K+ per year. If you're close and growing fast, go ahead and continue. Otherwise, we'd love to work with you when you're ready.
-                <button type="button" class="mt-3 text-brand-blue font-semibold text-sm hover:underline continue-anyway-btn">Continue Anyway</button>
-              </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="form-step" data-step="1">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What is your biggest bottleneck right now?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Not enough visibility">Not enough visibility or authority in my space</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Inconsistent leads">Inconsistent lead flow and pipeline</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="No conversion system">No system to convert content into clients</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Doing everything myself">Doing everything myself and burning out</button>
-              </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="form-step" data-step="2">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">How many qualified sales calls are you booking per month?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Fewer than 10">Fewer than 10</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="10-30">10 - 30</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="30-50">30 - 50</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="50+">50+</button>
-              </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="form-step" data-step="3">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">When are you looking to solve this?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Immediately">Immediately</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 30 days">Within 30 days</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 90 days">Within 90 days</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Just exploring">Just exploring</button>
-              </div>
-            </div>
-
-            <!-- Step 5 - Contact info -->
-            <div class="form-step" data-step="4">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">Last step. Where should we send the details?</p>
-              <form id="hero-contact-form" class="space-y-3">
-                <div class="grid grid-cols-2 gap-3">
-                  <input type="text" name="firstName" placeholder="First Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                  <input type="text" name="lastName" placeholder="Last Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                </div>
-                <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blue-hover text-white font-body font-semibold text-sm sm:text-base py-3.5 rounded-full transition-colors mt-1">
-                  Book My Strategy Call
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+      <!-- Typeform Application -->
+      <div id="qualify" class="max-w-[560px] mx-auto reveal" style="min-height:500px">
+        <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG"></div>
+        <script src="//embed.typeform.com/next/embed.js"></script>
       </div>
 
     </div>
@@ -413,88 +310,10 @@
         </p>
       </div>
 
-      <!-- Second Form Instance -->
-      <div class="max-w-[560px] mx-auto reveal">
-        <div class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-6 sm:p-8">
-          <h3 class="font-heading text-brand-navy text-xl sm:text-2xl text-center mb-1">See If You Qualify</h3>
-          <p class="font-body text-brand-muted text-sm text-center mb-5">Answer 4 quick questions. Takes 60 seconds.</p>
-
-          <div class="mb-5">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-body text-xs text-brand-muted font-medium" data-step-text="cta">Step 1 of 5</span>
-            </div>
-            <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-              <div class="h-full bg-brand-blue rounded-full progress-fill" data-progress="cta" style="width: 20%"></div>
-            </div>
-          </div>
-
-          <div id="cta-form">
-            <!-- Step 1 -->
-            <div class="form-step active" data-step="0">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What best describes your current revenue?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Under $250K/year" data-disqualify="true">Under $250K/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$250K - $500K/year">$250K - $500K/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$500K - $1M/year">$500K - $1M/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$1M - $5M/year">$1M - $5M/year</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="$5M+/year">$5M+/year</button>
-              </div>
-              <div class="disqualify-msg mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800 font-body leading-relaxed">
-                The Thought Leader Machine is built for coaches and consultants doing $250K+ per year. If you're close and growing fast, go ahead and continue. Otherwise, we'd love to work with you when you're ready.
-                <button type="button" class="mt-3 text-brand-blue font-semibold text-sm hover:underline continue-anyway-btn">Continue Anyway</button>
-              </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="form-step" data-step="1">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">What is your biggest bottleneck right now?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Not enough visibility">Not enough visibility or authority in my space</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Inconsistent leads">Inconsistent lead flow and pipeline</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="No conversion system">No system to convert content into clients</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Doing everything myself">Doing everything myself and burning out</button>
-              </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="form-step" data-step="2">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">How many qualified sales calls are you booking per month?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Fewer than 10">Fewer than 10</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="10-30">10 - 30</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="30-50">30 - 50</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="50+">50+</button>
-              </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="form-step" data-step="3">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">When are you looking to solve this?</p>
-              <div class="space-y-2.5">
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Immediately">Immediately</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 30 days">Within 30 days</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Within 90 days">Within 90 days</button>
-                <button type="button" class="option-btn w-full text-left px-4 py-3.5 border border-gray-200 rounded-xl font-body text-sm text-brand-gray hover:text-brand-navy" data-option data-value="Just exploring">Just exploring</button>
-              </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="form-step" data-step="4">
-              <p class="font-body text-brand-navy font-semibold text-sm sm:text-base mb-4">Last step. Where should we send the details?</p>
-              <form id="cta-contact-form" class="space-y-3">
-                <div class="grid grid-cols-2 gap-3">
-                  <input type="text" name="firstName" placeholder="First Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                  <input type="text" name="lastName" placeholder="Last Name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                </div>
-                <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-200 rounded-xl font-body text-sm text-brand-navy placeholder:text-brand-muted focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue">
-                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blue-hover text-white font-body font-semibold text-sm sm:text-base py-3.5 rounded-full transition-colors mt-1">
-                  Book My Strategy Call
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+      <!-- Typeform Application -->
+      <div class="max-w-[560px] mx-auto reveal" style="min-height:500px">
+        <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG"></div>
+        <script src="//embed.typeform.com/next/embed.js"></script>
       </div>
     </div>
   </section>
@@ -643,89 +462,6 @@
 
   <!-- JavaScript -->
   <script>
-    // Multi-step form logic
-    function initForm(containerId) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      const steps = container.querySelectorAll('.form-step');
-      const totalSteps = steps.length;
-      let currentStep = 0;
-
-      // Determine which progress elements to use
-      const formKey = containerId === 'hero-form' ? 'hero' : 'cta';
-      const progressBar = document.querySelector('[data-progress="' + formKey + '"]');
-      const stepText = document.querySelector('[data-step-text="' + formKey + '"]');
-
-      function showStep(index) {
-        steps.forEach(function(step, i) {
-          if (i === index) {
-            step.classList.add('active');
-          } else {
-            step.classList.remove('active');
-          }
-        });
-        if (progressBar) {
-          progressBar.style.width = ((index + 1) / totalSteps * 100) + '%';
-        }
-        if (stepText) {
-          stepText.textContent = 'Step ' + (index + 1) + ' of ' + totalSteps;
-        }
-      }
-
-      // Option buttons
-      container.querySelectorAll('[data-option]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var step = btn.closest('.form-step');
-
-          // Check for disqualify
-          if (btn.dataset.disqualify === 'true') {
-            var msg = step.querySelector('.disqualify-msg');
-            if (msg) {
-              msg.classList.add('show');
-              // Select the button visually
-              step.querySelectorAll('[data-option]').forEach(function(b) { b.classList.remove('selected'); });
-              btn.classList.add('selected');
-              return; // Don't auto-advance
-            }
-          }
-
-          // Select visually
-          step.querySelectorAll('[data-option]').forEach(function(b) { b.classList.remove('selected'); });
-          btn.classList.add('selected');
-
-          // Auto-advance after short delay
-          setTimeout(function() {
-            if (currentStep < totalSteps - 1) {
-              currentStep++;
-              showStep(currentStep);
-            }
-          }, 200);
-        });
-      });
-
-      // Continue anyway buttons (disqualification)
-      container.querySelectorAll('.continue-anyway-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          if (currentStep < totalSteps - 1) {
-            currentStep++;
-            showStep(currentStep);
-          }
-        });
-      });
-
-      // Submit handler
-      var form = container.querySelector('form');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          window.location.href = '/confirmation';
-        });
-      }
-
-      showStep(0);
-    }
-
     // FAQ accordion
     document.querySelectorAll('.faq-toggle').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -759,8 +495,6 @@
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', function() {
       revealOnScroll();
-      initForm('hero-form');
-      initForm('cta-form');
     });
   </script>
 
