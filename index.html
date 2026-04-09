@@ -449,31 +449,38 @@
         <p class="font-body text-brand-muted text-base mt-4">Millions of views. Real dashboards. No fluff.</p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-01.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-02.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-03.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-04.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-05.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-06.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-07.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-08.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-09.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-10.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-11.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-12.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-13.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-14.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-15.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-16.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-17.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-18.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-19.webp" alt="Millions of views - proof" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/leaad-farms-stats.webp" alt="LEAAD Farms growth stats" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-01.webp" alt="Ad campaign results" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-02.webp" alt="Ad campaign results" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-03.webp" alt="Ad campaign results" class="w-full h-auto object-cover" loading="lazy"></div>
-        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-04.webp" alt="Ad campaign results" class="w-full h-auto object-cover" loading="lazy"></div>
+      <style>
+        .masonry { columns: 2; column-gap: 16px; }
+        @media (min-width: 640px) { .masonry { columns: 3; column-gap: 20px; } }
+        @media (min-width: 1024px) { .masonry { columns: 4; column-gap: 20px; } }
+        .masonry > div { break-inside: avoid; margin-bottom: 16px; }
+        @media (min-width: 640px) { .masonry > div { margin-bottom: 20px; } }
+      </style>
+      <div class="masonry">
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-01.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-08.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-02.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-01.webp" alt="Ad campaign results" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-03.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-11.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-04.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-02.webp" alt="Ad campaign results" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-05.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-14.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-06.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-07.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-03.webp" alt="Ad campaign results" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-09.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-15.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-10.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/ads-proof-04.webp" alt="Ad campaign results" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-12.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-17.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-13.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-16.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-18.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
+        <div class="rounded-2xl overflow-hidden reveal"><img src="images/views-proof-19.webp" alt="Millions of views - proof" class="w-full h-auto" loading="lazy"></div>
       </div>
 
     </div>
