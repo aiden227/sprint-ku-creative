@@ -17,10 +17,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '941660101643118');
     fbq('track', 'PageView');
-
-    window.onTypeformLead = function () {
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-    };
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=941660101643118&ev=PageView&noscript=1"/></noscript>
@@ -182,7 +178,7 @@
 
       <!-- Typeform Application -->
       <div id="qualify" class="max-w-[560px] mx-auto reveal flex justify-center">
-        <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG" data-tf-on-submit="onTypeformLead"></div>
+        <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG"></div>
       </div>
 
     </div>
@@ -530,7 +526,7 @@
 
       <!-- Typeform Application -->
       <div class="max-w-[560px] mx-auto reveal flex justify-center">
-        <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG" data-tf-on-submit="onTypeformLead"></div>
+        <div data-tf-live="01KNM560KW4PWF26SD6XKJHNKG"></div>
       </div>
     </div>
   </section>
